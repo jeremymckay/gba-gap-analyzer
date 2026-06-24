@@ -1,0 +1,20 @@
+# Security Policies configuration for Google Business Attribute Gap Analyzer
+policies:
+  # Structural Gating: Rules for specific tool executions
+  restricted_tools:
+    - name: "write_report"
+      block_pii: true
+      checks:
+        - "regex_pii"
+        - "semantic_gating"
+    - name: "delete_report"
+      allowed_roles: ["admin"]
+
+  # Global security configuration
+  global_settings:
+    block_raw_pii: true
+    semantic_referee_enabled: true
+    allowed_categories:
+      - "coffee_shop"
+      - "cafe"
+      - "restaurant"
