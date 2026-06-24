@@ -1,9 +1,10 @@
-[project]
+[[project]
 name = "gba-gap-analyzer"
 version = "0.1.0"
-description = ""
+description = "Google Business Attribute Gap Analyzer"
+license = { text = "Apache-2.0" }
 authors = [
-    {name = "Your Name", email = "your@email.com"},
+    {name = "Google LLC"},
 ]
 
 
@@ -96,5 +97,4 @@ asyncio_default_fixture_loop_scope = "function"
 
 [tool.hatch.build.targets.wheel]
 packages = ["app","frontend"]
-
 
