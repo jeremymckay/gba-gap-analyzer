@@ -158,12 +158,13 @@ def create_data_agent() -> Agent:
     current_dir = os.path.dirname(os.path.abspath(__file__))
     mcp_script_path = os.path.abspath(os.path.join(current_dir, "..", "mcp_server.py"))
 
+    import sys
     # Initialize toolset connected to local MCP server
     mcp_toolset = McpToolset(
         connection_params=StdioConnectionParams(
             server_params=StdioServerParameters(
-                command="uv",
-                args=["run", "python", mcp_script_path],
+                command=sys.executable,
+                args=[mcp_script_path],
             )
         )
     )
@@ -208,6 +209,7 @@ attribute_gap_report:
         recommendation_impact: <High, Medium, or Low depending on the attribute's business value>
 
 Call the write_report tool to save this report.
+You MUST also always display the full generated YAML report directly in your final response to the user, formatted inside a markdown code block, so it is visible in the chat.
 If the write_report tool returns a Policy Violation error, self-correct by removing any raw PII (like private emails or phone numbers) and using safe bracketed placeholders instead (like [[BUSINESS_OWNER_EMAIL]] or [[BUSINESS_PHONE_NUMBER]]), then try calling write_report again.""",
         tools=[write_report],
     )

@@ -1,4 +1,4 @@
-[[project]
+[project]
 name = "gba-gap-analyzer"
 version = "0.1.0"
 description = "Google Business Attribute Gap Analyzer"

@@ -88,7 +88,7 @@ POSSIBLE_ATTRIBUTES_MAP = {
         "servesBrunch",
         "servesCoffee",
         "servesDessert",
-        "goodForKids",
+        "goodForChildren",
         "dineIn",
     ],
     "cafe": [
@@ -105,7 +105,7 @@ POSSIBLE_ATTRIBUTES_MAP = {
         "servesBrunch",
         "servesCoffee",
         "servesDessert",
-        "goodForKids",
+        "goodForChildren",
         "dineIn",
     ],
     "restaurant": [
@@ -128,7 +128,7 @@ POSSIBLE_ATTRIBUTES_MAP = {
         "servesWine",
         "servesCocktails",
         "servesVegetarianFood",
-        "goodForKids",
+        "goodForChildren",
         "goodForGroups",
         "dineIn",
         "takeout",
@@ -166,7 +166,7 @@ def extract_actual_attributes(data: dict) -> List[str]:
     # Check top-level boolean fields
     boolean_fields = [
         "outdoorSeating",
-        "goodForKids",
+        "goodForChildren",
         "goodForGroups",
         "goodForWatchingSports",
         "liveMusic",
@@ -230,7 +230,7 @@ async def fetch_place_details_from_api(
         "accessibilityOptions",
         "paymentOptions",
         "outdoorSeating",
-        "goodForKids",
+        "goodForChildren",
         "goodForGroups",
         "goodForWatchingSports",
         "liveMusic",
@@ -370,7 +370,7 @@ def fetch_possible_attributes(primary_category: str) -> List[str]:
             "outdoorSeating",
             "servesCoffee",
             "servesDessert",
-            "goodForKids",
+            "goodForChildren",
             "goodForGroups",
             "reservable",
         ]
